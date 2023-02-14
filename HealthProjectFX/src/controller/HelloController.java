@@ -1,4 +1,4 @@
-package com.example.hospitalmanager;
+package com.example.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 
-public class HelloController {
+public class addPatientController {
     @FXML
     private TextField fName;
     @FXML
