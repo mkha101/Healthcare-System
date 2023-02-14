@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.label.*?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="842.0" style="-fx-border-color: RED;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+	<columnConstraints>
+		<ColumnConstraints hgrow="SOMETIMES" maxWidth="253.0" minWidth="10.0" prefWidth="204.0" />
+		<ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="10.0" prefWidth="201.0" />
+		<ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="183.0" />
+	</columnConstraints>
+	<rowConstraints>
+		<RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="42.0" vgrow="SOMETIMES" />
+		<RowConstraints maxHeight="250.0" minHeight="0.0" prefHeight="78.0" vgrow="SOMETIMES" />
+		<RowConstraints maxHeight="277.0" minHeight="10.0" prefHeight="82.0" vgrow="SOMETIMES" />
+		<RowConstraints maxHeight="277.0" minHeight="10.0" prefHeight="199.0" vgrow="SOMETIMES" />
+	</rowConstraints>
+	<children>
+		<VBox alignment="CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+			<children>
+				<Label id="emailLabel" fx:id="usernameLabel" alignment="TOP_CENTER" contentDisplay="TOP" text="Username" textAlignment="CENTER" textFill="#e44545">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+			</children>
+		</VBox>
+		<VBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+			<children>
+				<TextField id="emailTextField" fx:id="emailTextField" prefHeight="18.0" prefWidth="200.0" style="-fx-border-color: RED;" />
+			</children>
+		</VBox>
+		<VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <PasswordField fx:id="passwordField" style="-fx-border-color: RED;" />
+         </children>
+		</VBox>
+		<VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+			<children>
+				<Label id="passwordLabel" fx:id="passwordLabel" alignment="CENTER" contentDisplay="TOP" text="Password" textAlignment="CENTER" textFill="#e81212">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+			</children>
+		</VBox>
+		<VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+			<children>
+				<Button fx:id="loginBtn" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="43.0" prefWidth="216.0" text="Login" textAlignment="CENTER" textFill="RED">
+					<VBox.margin>
+						<Insets top="25.0" />
+					</VBox.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+				</Button>
+				<Label alignment="TOP_LEFT" prefHeight="85.0" prefWidth="178.0" text="If you are a new user please contact your Admin" textAlignment="CENTER" wrapText="true">
+					<VBox.margin>
+						<Insets top="30.0" />
+					</VBox.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+				</Label>
+			</children>
+		</VBox>
+		<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-text-alignment: CENTER;" styleClass="-fx-text-alignment:CENTER" GridPane.columnSpan="3">
+			<children>
+				<TextArea id="titleDisplayArea" editable="false" prefHeight="81.0" prefWidth="805.0" style="-fx-border-color: RED;" text="Welcome to Health Management Services!&#10;Please Login.">
+					<font>
+						<Font name="Cooper Black" size="24.0" />
+					</font>
+				</TextArea>
+			</children>
+		</HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <children>
+            <Button fx:id="adminSignUpButton" mnemonicParsing="false" onAction="#adminSignUpOnAction" text="Admin Sign Up">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+	</children>
+</GridPane>
