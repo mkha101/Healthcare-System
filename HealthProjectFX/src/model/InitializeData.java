@@ -6,6 +6,10 @@ public class InitializeData {
 		UserStore.getUserStore();
 	}
 
+
+	public static void initializePatientTree() {
+		PatientStore.getPatientStore();
+	}
 	public static void initialize() {
 		initializeUserTree();
 	}
