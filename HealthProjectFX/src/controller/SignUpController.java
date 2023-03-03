@@ -43,7 +43,7 @@ public class SignUpController {
 					"Please make sure both the email field and password fields are filled out completely.");
 			alert.showAndWait();
 			e.consume();
-		} else if (password != retypePassword) {
+		} else if (!(password.equals(retypePassword))) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Information Error");
 			alert.setHeaderText("Password does not match");
