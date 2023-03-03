@@ -7,13 +7,31 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.User;
-import model.UserStore;
-public class HealthFunctionController {
 
+public class HealthFunctionController {
+    @FXML
+    public TextField searchPatientTextField;
+    @FXML
+    public TextField searchRoomTextField;
+
+    private String patientId;
+    private String roomNumber;
+
+    public void addPatientOnAction(ActionEvent e) throws IOException {
+        Parent addPatientRoot = FXMLLoader.load(getClass().getResource("/view/addPatient.fxml"));
+        Scene addPatientScene = new Scene(addPatientRoot);
+        Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        window.setScene(addPatientScene);
+        window.show();
+    }
+
+    public void logOutOnAction(ActionEvent e) throws IOException {
+        Parent loginRoot = FXMLLoader.load(getClass().getResource("/view/HealthLogin.fxml"));
+        Scene loginScene = new Scene(loginRoot);
+        Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        window.setScene(loginScene);
+        window.show();
+    }
 }
