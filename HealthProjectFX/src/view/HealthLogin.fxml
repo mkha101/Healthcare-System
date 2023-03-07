@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
-<?import java.lang.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.label.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="842.0" style="-fx-border-color: RED;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+<GridPane alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="842.0" style="-fx-border-color: RED;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
 	<columnConstraints>
 		<ColumnConstraints hgrow="SOMETIMES" maxWidth="253.0" minWidth="10.0" prefWidth="204.0" />
 		<ColumnConstraints hgrow="SOMETIMES" maxWidth="356.0" minWidth="10.0" prefWidth="201.0" />
@@ -69,7 +76,7 @@
 		</VBox>
 		<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-text-alignment: CENTER;" styleClass="-fx-text-alignment:CENTER" GridPane.columnSpan="3">
 			<children>
-				<TextArea id="titleDisplayArea" editable="false" prefHeight="81.0" prefWidth="805.0" style="-fx-border-color: RED;" text="Welcome to Health Management Services!&#10;Please Login.">
+				<TextArea id="titleDisplayArea" editable="false" prefHeight="90.0" prefWidth="599.0" style="-fx-border-color: RED;" text="Welcome to Health Management Services!&#10;Please Login.">
 					<font>
 						<Font name="Cooper Black" size="24.0" />
 					</font>
@@ -85,5 +92,10 @@
             </Button>
          </children>
       </HBox>
+      <ImageView fitHeight="163.0" fitWidth="270.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="3">
+         <image>
+            <Image url="@../../../../How-To-Become-A-Healthcare-Administrator-_-HeroImage.jpg" />
+         </image>
+      </ImageView>
 	</children>
 </GridPane>
