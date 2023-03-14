@@ -20,18 +20,31 @@ public class SignUpController {
 	@FXML
 	public TextField emailTextField;
 	@FXML
+	public TextField firstNameTextField;
+	@FXML
+	public TextField lastNameTextField;
+	@FXML
+	public TextField titleTextField;
+	@FXML
 	public PasswordField passwordField;
 	@FXML
 	public PasswordField retypePasswordField;
 
 	private String email;
 	private String password;
+	private String firstName;
+	private String lastName;
+	private String title;
 	private String retypePassword;
+
 	private static UserStore userStore;
 
 	public void createNewAccountOnAction(ActionEvent e) {
 		userStore = UserStore.getUserStore();
 		email = emailTextField.getText();
+		firstName = firstNameTextField.getText();
+		lastName = lastNameTextField.getText();
+		title = titleTextField.getText();
 		password = passwordField.getText();
 		retypePassword = retypePasswordField.getText();
 
@@ -69,7 +82,7 @@ public class SignUpController {
 			alert.showAndWait();
 			e.consume();
 		} else {
-			userStore.insert(email, new User(email, password));
+			userStore.insert(email, new User(email, password, firstName, lastName, title));
 			UserStore.saveUser();
 			Alert alert2 = new Alert(AlertType.CONFIRMATION);
 			alert2.setTitle("User Sign Up Confirmation");
