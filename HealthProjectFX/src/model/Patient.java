@@ -76,10 +76,6 @@ public class Patient implements Comparable<Patient>, Serializable {
         return patientID;
     }
 
-    public void setPatientID(int patientID) {
-        this.patientID = patientID;
-    }
-
     @Override
     public String toString() {
         return "Patient [firstName=" + firstName + ", lastName=" + lastName + ", prescritions=" + prescritions
