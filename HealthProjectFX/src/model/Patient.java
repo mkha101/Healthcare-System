@@ -5,23 +5,25 @@ import java.io.Serializable;
 public class Patient implements Comparable<Patient>, Serializable {
     private String firstName;
     private String lastName;
-    private String prescritions;
+    private String prescriptions;
     private String condition;
     private String notes;
     private String caretaker;
+    private String patientID;
 
-    private static int patientID = 0;
+    private static int idCounter= 0;
 
-    public Patient(String firstName, String lastName, String prescritions, String condition, String notes,
+
+    public Patient(String firstName, String lastName, String prescriptions, String condition, String notes,
                    String caretaker) {
         super();
         this.firstName = firstName;
         this.lastName = lastName;
-        this.prescritions = prescritions;
+        this.prescriptions = prescriptions;
         this.condition = condition;
         this.notes = notes;
         this.caretaker = caretaker;
-        patientID = patientID + 1 ;
+        this.patientID = String.valueOf(idCounter++) ;
     }
 
     public String getFirstName() {
@@ -40,12 +42,12 @@ public class Patient implements Comparable<Patient>, Serializable {
         this.lastName = lastName;
     }
 
-    public String getPrescritions() {
-        return prescritions;
+    public String getPrescriptions() {
+        return prescriptions;
     }
 
-    public void setPrescritions(String prescritions) {
-        this.prescritions = prescritions;
+    public void setPrescriptions(String prescriptions) {
+        this.prescriptions = prescriptions;
     }
 
     public String getCondition() {
@@ -72,17 +74,13 @@ public class Patient implements Comparable<Patient>, Serializable {
         this.caretaker = caretaker;
     }
 
-    public int getPatientID() {
+    public String getPatientID() {
         return patientID;
-    }
-
-    public void setPatientID(int patientID) {
-        this.patientID = patientID;
     }
 
     @Override
     public String toString() {
-        return "Patient [firstName=" + firstName + ", lastName=" + lastName + ", prescritions=" + prescritions
+        return "Patient [firstName=" + firstName + ", lastName=" + lastName + ", prescritions=" + prescriptions
                 + ", condition=" + condition + ", notes=" + notes + ", caretaker=" + caretaker + ", patientID="
                 + patientID + "]";
     }
