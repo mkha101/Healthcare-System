@@ -5,11 +5,18 @@ import java.io.Serializable;
 public class User implements Comparable<User>, Serializable {
 	private String username;
 	private String password;
+	private String firstName;
+	private String lastName;
+	private String title;
+	private static int employeeId = 0;
 
-	public User(String username, String password) {
-		super();
+	public User(String username, String password, String firstName, String lastName, String title) {
 		this.username = username;
 		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.title = title;
+		this.employeeId = employeeId+1;
 	}
 
 	public String getUsername() {
@@ -28,9 +35,43 @@ public class User implements Comparable<User>, Serializable {
 		this.password = password;
 	}
 
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public static int getEmployeeId() {
+		return employeeId;
+	}
+
 	@Override
 	public String toString() {
-		return "User [Username= " + username + "[pass= " + password + "]";
+		return "User{" +
+				"username='" + username + '\'' +
+				"employeeID='" + employeeId + '\'' +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", title='" + title + '\'' +
+				'}';
 	}
 
 	@Override

@@ -20,7 +20,7 @@ public class AddPatientController {
     public Button addPatientBtn;
 
 //	public void addPatient(ActionEvent event) {
-//
+
 //	}
 
 }
