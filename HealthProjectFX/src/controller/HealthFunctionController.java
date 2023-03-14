@@ -20,7 +20,7 @@ public class HealthFunctionController {
     private String roomNumber;
 
     public void addPatientOnAction(ActionEvent e) throws IOException {
-        Parent addPatientRoot = FXMLLoader.load(getClass().getResource("/view/addPatient.fxml"));
+        Parent addPatientRoot = FXMLLoader.load(getClass().getResource("/view/AddPatient.fxml"));
         Scene addPatientScene = new Scene(addPatientRoot);
         Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
         window.setScene(addPatientScene);
