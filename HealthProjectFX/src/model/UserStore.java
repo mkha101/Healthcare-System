@@ -87,12 +87,12 @@ public class UserStore {
 	}
 
 	public static void setTheUserMap() {
-		importUserFile("UserInfo/users.txt");
+		importUserFile("HealthProjectFX/UserInfo/userStore.dat");
 	}
 
-	public static void importUserFile(String string) {
+	public static void importUserFile(String fileName) {
 		try {
-			File userFile = new File("UserInfo/userStore.dat");
+			File userFile = new File(fileName);
 			if (userFile.exists() && userFile != null) {
 				FileInputStream fis = new FileInputStream(userFile);
 				ObjectInputStream ois = new ObjectInputStream(fis);
@@ -113,13 +113,14 @@ public class UserStore {
 
 	public static void saveUser() {
 		try {
-			File file = new File("UserInfo/userStore.dat");
+			File file = new File("HealthProjectFX/UserInfo/userStore.dat");
 			FileOutputStream fos = new FileOutputStream(file);
 			BufferedOutputStream bos = new BufferedOutputStream(fos);
 			ObjectOutputStream oos = new ObjectOutputStream(bos);
 			oos.writeObject(theMap);
 			oos.close();
 		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 }

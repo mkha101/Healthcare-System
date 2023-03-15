@@ -14,11 +14,11 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class PatientStore {
-    private static TreeMap<Integer, Patient> thePatientMap;
+    private static TreeMap<String, Patient> thePatientMap;
     private static PatientStore patientStore;
 
     public PatientStore() {
-        thePatientMap = new TreeMap<Integer, Patient>();
+        thePatientMap = new TreeMap<String, Patient>();
         setThePatientMap();
     }
 
@@ -40,7 +40,7 @@ public class PatientStore {
             if (patientFile.exists() && patientFile != null) {
                 FileInputStream fis = new FileInputStream(patientFile);
                 ObjectInputStream ois = new ObjectInputStream(fis);
-                thePatientMap.putAll((Map<? extends Integer, ? extends Patient>) ois.readObject());
+                thePatientMap.putAll((Map<? extends String, ? extends Patient>) ois.readObject());
                 ois.close();
                 fis.close();
             }
@@ -55,8 +55,8 @@ public class PatientStore {
         }
     }
 
-    public void insert(int patientId, Patient patient) {
-        thePatientMap.put(patientId, patient);
+    public void insert(String patientID, Patient patient) {
+        thePatientMap.put(patientID, patient);
     }
 
     public boolean searchPatient(String string) {
