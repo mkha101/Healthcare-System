@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #F0FFFF#F0FFFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddPatientController">
+<VBox alignment="CENTER" spacing="20.0" style="-fx-background-color: #F0FFFF#F0FFFF;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddPatientController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -17,16 +17,17 @@
       <AnchorPane prefHeight="460.0" prefWidth="609.0">
          <children>
             <Label layoutX="8.0" layoutY="14.0" text="First Name:" />
-            <TextField layoutX="74.0" layoutY="10.0" />
+            <TextField fx:id="firstNameTextField" layoutX="74.0" layoutY="10.0" />
             <Label layoutX="8.0" layoutY="44.0" text="Last Name:" />
-            <TextField layoutX="74.0" layoutY="40.0" />
+            <TextField fx:id="lastNameTextField" layoutX="74.0" layoutY="40.0" />
             <Label layoutX="8.0" layoutY="167.0" text="Medication History:" />
             <Label layoutX="8.0" layoutY="321.0" text="Notes:" />
-            <TextArea layoutX="8.0" layoutY="344.0" prefHeight="109.0" prefWidth="416.0" />
+            <TextArea fx:id="notesTextArea" layoutX="8.0" layoutY="344.0" prefHeight="109.0" prefWidth="416.0" />
             <Label layoutX="8.0" layoutY="78.0" text="Date of Birth:" />
-            <TextArea layoutX="8.0" layoutY="192.0" prefHeight="109.0" prefWidth="416.0" />
-            <DatePicker layoutX="85.0" layoutY="74.0" />
-            <Button layoutX="514.0" layoutY="427.0" mnemonicParsing="false" text="Add Patient" />
+            <TextArea fx:id="medicationTextArea" layoutX="8.0" layoutY="192.0" prefHeight="109.0" prefWidth="416.0" />
+            <DatePicker fx:id="birthDatePicker" layoutX="85.0" layoutY="74.0" />
+            <Button fx:id="backBtn" layoutX="514.0" layoutY="427.0" mnemonicParsing="false" onAction="#backOnAction" prefHeight="25.0" prefWidth="79.0" text="Go Back" />
+            <Button fx:id="addPatientBtn" layoutX="514.0" layoutY="374.0" mnemonicParsing="false" onAction="#addPatientOnAction" text="Add Patient" />
          </children></AnchorPane>
    </children>
 </VBox>

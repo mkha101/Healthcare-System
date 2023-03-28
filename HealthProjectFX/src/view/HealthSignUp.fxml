@@ -163,7 +163,7 @@
       </HBox>
       <VBox alignment="BOTTOM_CENTER" prefHeight="280.0" prefWidth="298.0" GridPane.columnIndex="4" GridPane.rowIndex="7">
          <children>
-            <Button fx:id="goBackBtn" alignment="CENTER" mnemonicParsing="false" onAction="#goBackOnAction" prefHeight="46.0" prefWidth="195.0" text="Go Back To Admin Tools" textFill="RED">
+            <Button fx:id="goBackBtn" alignment="CENTER" mnemonicParsing="false" onAction="#goBackOnAction" prefHeight="46.0" prefWidth="195.0" text="Go Back To Login Page" textFill="RED">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
