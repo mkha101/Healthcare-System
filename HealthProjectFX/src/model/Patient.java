@@ -26,6 +26,9 @@ public class Patient implements Comparable<Patient>, Serializable {
         this.patientID = String.valueOf(idCounter++) ;
     }
 
+    public Patient(String firstName, String lastName, String medications, String condition, String notes, String caretaker, String patientID, int roomNumber) {
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -80,7 +83,7 @@ public class Patient implements Comparable<Patient>, Serializable {
 
     @Override
     public String toString() {
-        return "Patient [firstName=" + firstName + ", lastName=" + lastName + ", prescritions=" + prescriptions
+        return "Patient [firstName=" + firstName + ", lastName=" + lastName + ", prescriptions=" + prescriptions
                 + ", condition=" + condition + ", notes=" + notes + ", caretaker=" + caretaker + ", patientID="
                 + patientID + "]";
     }
