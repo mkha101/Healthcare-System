@@ -37,6 +37,7 @@ public class AddPatientController {
     private String patientID;
     private static PatientStore patientStore;
 	public void addPatientOnAction(ActionEvent e)throws IOException {
+        patientStore = PatientStore.getPatientStore();
         firstName = firstNameTextField.getText();
         lastName = lastNameTextField.getText();
         medications = medicationTextArea.getText();
@@ -52,7 +53,9 @@ public class AddPatientController {
             e.consume();
         }
             else {
-                patientStore.insert(patientID, new Patient(firstName, lastName, medications, condition, notes, caretaker));
+                Patient patient = new Patient(firstName, lastName, medications, condition, notes, caretaker);
+                patientStore.insert(patient.getPatientID(), patient);
+                patientStore.displayAll();
                 PatientStore.savePatient();
                 Alert alert2 = new Alert(Alert.AlertType.CONFIRMATION);
                 alert2.setTitle("Patient Information Confirmation");

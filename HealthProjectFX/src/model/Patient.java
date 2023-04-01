@@ -13,7 +13,6 @@ public class Patient implements Comparable<Patient>, Serializable {
 
     private static int idCounter= 0;
 
-
     public Patient(String firstName, String lastName, String prescriptions, String condition, String notes,
                    String caretaker) {
         super();
@@ -80,9 +79,9 @@ public class Patient implements Comparable<Patient>, Serializable {
 
     @Override
     public String toString() {
-        return "Patient [firstName=" + firstName + ", lastName=" + lastName + ", prescritions=" + prescriptions
-                + ", condition=" + condition + ", notes=" + notes + ", caretaker=" + caretaker + ", patientID="
-                + patientID + "]";
+        return "Patient [\nfirstName=" + firstName + "\nlastName=" + lastName + "\nprescritions=" + prescriptions
+                + "\ncondition=" + condition + "\nnotes=" + notes + "\ncaretaker=" + caretaker + "\npatientID="
+                + patientID + "\n]";
     }
 
     @Override

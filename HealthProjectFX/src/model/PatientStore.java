@@ -29,14 +29,13 @@ public class PatientStore {
             return patientStore;
         }
     }
-
     public static void setThePatientMap() {
-        importPatientFile("UserInfo/patients.txt");
+        importPatientFile("HealthProjectFX/UserInfo/patientStore.dat");
     }
 
-    public static void importPatientFile(String string) {
+    public static void importPatientFile(String fileName) {
         try {
-            File patientFile = new File("UserInfo/patientStore.dat");
+            File patientFile = new File(fileName);
             if (patientFile.exists() && patientFile != null) {
                 FileInputStream fis = new FileInputStream(patientFile);
                 ObjectInputStream ois = new ObjectInputStream(fis);
@@ -55,20 +54,31 @@ public class PatientStore {
         }
     }
 
-    public void insert(String patientID, Patient patient) {
-        thePatientMap.put(patientID, patient);
+    public void insert(String patientId, Patient patient) {
+        thePatientMap.put(patientId, patient);
     }
 
-    public boolean searchPatient(String string) {
-        if (thePatientMap.containsKey(string)) {
+    public boolean searchPatientId(String patientId) {
+        if (thePatientMap.containsKey(patientId)) {
             return true;
         } else {
-            System.out.println("User not found");
+            System.out.println("patientId not found");
             return false;
         }
     }
+    public boolean searchPatientRoom(String roomId) {
+        if (thePatientMap.containsKey(roomId)) {
+            return true;
+        } else {
+            System.out.println("room is empty");
+            return false;
+        }
+    }
+    public Patient display(String patientId) {
+            return thePatientMap.get(patientId);
+        }
 
-    public void display() {
+    public void displayAll() {
         Iterator mapIt = thePatientMap.entrySet().iterator();
         while (mapIt.hasNext()) {
             System.out.println(mapIt.next());
@@ -81,7 +91,7 @@ public class PatientStore {
 
     public static void savePatient() {
         try {
-            File file = new File("UserInfo/patientStore.dat");
+            File file = new File("HealthProjectFX/UserInfo/patientStore.dat");
             FileOutputStream fos = new FileOutputStream(file);
             BufferedOutputStream bos = new BufferedOutputStream(fos);
             ObjectOutputStream oos = new ObjectOutputStream(bos);

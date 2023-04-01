@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -22,11 +23,11 @@
     </columnConstraints>
     <rowConstraints>
         <RowConstraints maxHeight="75.0" minHeight="0.0" prefHeight="55.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="256.0" minHeight="10.0" prefHeight="106.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="341.0" minHeight="10.0" prefHeight="139.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="297.0" minHeight="10.0" prefHeight="112.0" vgrow="SOMETIMES" />
-        <RowConstraints maxHeight="278.0" minHeight="10.0" prefHeight="211.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="117.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="256.0" minHeight="10.0" prefHeight="97.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="341.0" minHeight="10.0" prefHeight="122.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="297.0" minHeight="10.0" prefHeight="119.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="278.0" minHeight="10.0" prefHeight="183.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
         <HBox prefHeight="26.0" prefWidth="1055.0" GridPane.columnSpan="5">
@@ -61,14 +62,14 @@
                 </Label>
             </children>
         </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
             <children>
                 <Button fx:id="addPatientButton" mnemonicParsing="false" onAction="#addPatientOnAction" prefHeight="37.0" prefWidth="193.0" text="Add New Patient" />
             </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
             <children>
-                <Button fx:id="searchPatientIdButton" mnemonicParsing="false" prefHeight="42.0" prefWidth="187.0" text="Search Patient ID" />
+                <Button fx:id="searchPatientIdButton" mnemonicParsing="false" onAction="#searchPatientOnAction" prefHeight="42.0" prefWidth="187.0" text="Search Patient ID" />
             </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
@@ -76,10 +77,13 @@
                 <TextField fx:id="searchPatientTextField" prefHeight="31.0" prefWidth="281.0" />
             </children>
         </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="3" GridPane.rowSpan="2">
+         <children>
+            <TextArea fx:id="resultsTextArea" prefHeight="259.0" prefWidth="389.0" visible="false" />
+         </children></HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
             <children>
-                <Button fx:id="searchRoomButton" mnemonicParsing="false" prefHeight="35.0" prefWidth="187.0" text="Search Room Number" />
+                <Button fx:id="searchRoomButton" mnemonicParsing="false" onAction="#searchRoomOnAction" prefHeight="35.0" prefWidth="187.0" text="Search Room Number" />
             </children>
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
@@ -87,7 +91,7 @@
                 <TextField fx:id="searchRoomTextField" prefHeight="31.0" prefWidth="249.0" />
             </children>
         </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="238.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
             <children>
                 <Button fx:id="logOutButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#logOutOnAction" prefHeight="31.0" prefWidth="144.0" text="Log Out" textAlignment="CENTER" />
             </children>
