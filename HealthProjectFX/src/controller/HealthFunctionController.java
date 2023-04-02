@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,6 +37,7 @@ public class HealthFunctionController {
             resultsTextArea.setVisible(true);
             resultsTextArea.appendText(patient.toString());
         }else{
+            resultsTextArea.setVisible(true);
             resultsTextArea.clear();
             resultsTextArea.appendText("patientId not found");
             System.out.println("Id not found");
@@ -42,15 +45,18 @@ public class HealthFunctionController {
     }
     public void searchRoomOnAction(ActionEvent e) throws IOException{
         roomNumber = Integer.valueOf(searchRoomTextField.getText());
-        if(patientStore.searchPatientRoom(roomNumber)) {
+        System.out.println(roomNumber);
+        if(patientStore.searchPatientRoom(roomNumber)==null) {
             resultsTextArea.clear();
-            Patient patient = patientStore.display(patientId);
             resultsTextArea.setVisible(true);
-            resultsTextArea.appendText(patient.toString());
-        }else{
-            resultsTextArea.clear();
             resultsTextArea.appendText("roomNumber not in use");
-            System.out.println("room not found");
+        }else{
+            ArrayList<Patient> arr = (ArrayList<Patient>) patientStore.searchPatientRoom(roomNumber);
+            resultsTextArea.clear();
+            resultsTextArea.setVisible(true);
+            resultsTextArea.appendText(arr.toString());
+
+           // System.out.println("room not found");
         };
     }
     public void addPatientOnAction(ActionEvent e) throws IOException {

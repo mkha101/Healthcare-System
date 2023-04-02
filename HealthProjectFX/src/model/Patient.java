@@ -14,7 +14,7 @@ public class Patient implements Comparable<Patient>, Serializable {
     private int roomNumber;
 
     private static int idCounter= 0;
-    private int randomRoom = new Random().nextInt(100) + 1;
+
 
 
     public Patient(String firstName, String lastName, String prescriptions, String condition, String notes,
@@ -27,7 +27,7 @@ public class Patient implements Comparable<Patient>, Serializable {
         this.notes = notes;
         this.caretaker = caretaker;
         this.patientId = String.valueOf(idCounter++);
-        this.roomNumber = randomRoom;
+        this.roomNumber = new Random().nextInt(100) + 1;;
     }
 
     public Patient(String firstName, String lastName, String medications, String condition, String notes, String caretaker, String patientID, int roomNumber) {
@@ -47,6 +47,13 @@ public class Patient implements Comparable<Patient>, Serializable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public int getRoomNumber() {
+        return roomNumber;
+    }
+    public void setRoomNumber(int roomNumber) {
+        this.roomNumber = roomNumber;
     }
 
     public String getPrescriptions() {

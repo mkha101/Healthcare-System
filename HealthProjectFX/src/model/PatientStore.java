@@ -10,8 +10,10 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 public class PatientStore {
     private static TreeMap<String, Patient> thePatientMap;
@@ -66,13 +68,11 @@ public class PatientStore {
             return false;
         }
     }
-    public boolean searchPatientRoom(int roomId) {
-        if (thePatientMap.containsKey(roomId)) {
-            return true;
-        } else {
-            System.out.println("room is empty");
-            return false;
-        }
+    public List<Patient> searchPatientRoom(int roomId) {
+        return thePatientMap.values()
+                .stream()
+                .filter(c -> c.getRoomNumber() == (roomId))
+                .collect(Collectors.toList());
     }
     public Patient display(String patientId) {
             return thePatientMap.get(patientId);
