@@ -66,7 +66,7 @@ public class PatientStore {
             return false;
         }
     }
-    public boolean searchPatientRoom(String roomId) {
+    public boolean searchPatientRoom(int roomId) {
         if (thePatientMap.containsKey(roomId)) {
             return true;
         } else {

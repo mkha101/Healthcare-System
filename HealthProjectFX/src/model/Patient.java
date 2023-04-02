@@ -1,6 +1,7 @@
 package model;
 
 import java.io.Serializable;
+import java.util.Random;
 
 public class Patient implements Comparable<Patient>, Serializable {
     private String firstName;
@@ -9,9 +10,12 @@ public class Patient implements Comparable<Patient>, Serializable {
     private String condition;
     private String notes;
     private String caretaker;
-    private String patientID;
+    private String patientId;
+    private int roomNumber;
 
     private static int idCounter= 0;
+    private int randomRoom = new Random().nextInt(100) + 1;
+
 
     public Patient(String firstName, String lastName, String prescriptions, String condition, String notes,
                    String caretaker) {
@@ -22,7 +26,11 @@ public class Patient implements Comparable<Patient>, Serializable {
         this.condition = condition;
         this.notes = notes;
         this.caretaker = caretaker;
-        this.patientID = String.valueOf(idCounter++) ;
+        this.patientId = String.valueOf(idCounter++);
+        this.roomNumber = randomRoom;
+    }
+
+    public Patient(String firstName, String lastName, String medications, String condition, String notes, String caretaker, String patientID, int roomNumber) {
     }
 
     public String getFirstName() {
@@ -74,14 +82,14 @@ public class Patient implements Comparable<Patient>, Serializable {
     }
 
     public String getPatientID() {
-        return patientID;
+        return patientId;
     }
 
     @Override
     public String toString() {
         return "Patient [\nfirstName=" + firstName + "\nlastName=" + lastName + "\nprescritions=" + prescriptions
                 + "\ncondition=" + condition + "\nnotes=" + notes + "\ncaretaker=" + caretaker + "\npatientID="
-                + patientID + "\n]";
+                + patientId + "\nroomNumber=" +roomNumber+"\n]";
     }
 
     @Override

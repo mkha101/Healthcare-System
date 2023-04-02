@@ -27,7 +27,9 @@ public class LoginController {
 
 	public void loginOnAction(ActionEvent e) throws IOException {
 		userMap = UserStore.getUserStore();
-		if (emailTextField.getText() == null || passwordField.getText() == null) {
+		email = emailTextField.getText();
+		password = passwordField.getText();
+		if (email.isBlank()|| password.isBlank()) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Information Error");
 			alert.setHeaderText("Information Missing");
@@ -35,8 +37,6 @@ public class LoginController {
 			alert.showAndWait();
 			e.consume();
 		}
-		email = emailTextField.getText();
-		password = passwordField.getText();
 		try {
 			if (userMap.searchEmail(email)) {
 				if (userMap.searchPassword(email, password)) {

@@ -79,7 +79,10 @@
         </HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="3" GridPane.rowSpan="2">
          <children>
-            <TextArea fx:id="resultsTextArea" prefHeight="259.0" prefWidth="389.0" visible="false" />
+            <TextArea fx:id="resultsTextArea" prefHeight="259.0" prefWidth="389.0" visible="false" wrapText="true">
+               <font>
+                  <Font size="14.0" />
+               </font></TextArea>
          </children></HBox>
         <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
             <children>

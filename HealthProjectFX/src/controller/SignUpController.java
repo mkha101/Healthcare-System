@@ -48,7 +48,7 @@ public class SignUpController {
 		password = passwordField.getText();
 		retypePassword = retypePasswordField.getText();
 
-		if (email == "" || password == "" || retypePassword == "") {
+		if (email.isBlank() || password.isBlank() || retypePassword .isBlank()) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Information Error");
 			alert.setHeaderText("Information Missing");

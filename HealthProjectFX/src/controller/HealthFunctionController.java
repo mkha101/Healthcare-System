@@ -22,7 +22,7 @@ public class HealthFunctionController {
     public TextField searchRoomTextField;
 
     private String patientId;
-    private String roomNumber;
+    private int roomNumber;
     private static PatientStore patientStore;
     public TextArea resultsTextArea;
 
@@ -30,15 +30,28 @@ public class HealthFunctionController {
         patientStore = PatientStore.getPatientStore();
         patientId = searchPatientTextField.getText();
         if(patientStore.searchPatientId(patientId)) {
+            resultsTextArea.clear();
            Patient patient = patientStore.display(patientId);
             resultsTextArea.setVisible(true);
             resultsTextArea.appendText(patient.toString());
         }else{
+            resultsTextArea.clear();
+            resultsTextArea.appendText("patientId not found");
             System.out.println("Id not found");
         };
     }
     public void searchRoomOnAction(ActionEvent e) throws IOException{
-
+        roomNumber = Integer.valueOf(searchRoomTextField.getText());
+        if(patientStore.searchPatientRoom(roomNumber)) {
+            resultsTextArea.clear();
+            Patient patient = patientStore.display(patientId);
+            resultsTextArea.setVisible(true);
+            resultsTextArea.appendText(patient.toString());
+        }else{
+            resultsTextArea.clear();
+            resultsTextArea.appendText("roomNumber not in use");
+            System.out.println("room not found");
+        };
     }
     public void addPatientOnAction(ActionEvent e) throws IOException {
         Parent addPatientRoot = FXMLLoader.load(getClass().getResource("/view/AddPatient.fxml"));
