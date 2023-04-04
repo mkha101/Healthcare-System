@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/HealthProjectFX/HealthProjectFX.iml" filepath="$PROJECT_DIR$/HealthProjectFX/HealthProjectFX.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Healthcare-System.iml" filepath="$PROJECT_DIR$/.idea/Healthcare-System.iml" />
+    </modules>
+  </component>
+</project>

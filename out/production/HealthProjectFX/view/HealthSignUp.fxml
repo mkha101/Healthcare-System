@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="TOP_CENTER" minHeight="-Infinity" minWidth="-Infinity" prefHeight="706.0" prefWidth="1005.0" style="-fx-border-color: Blue;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SignUpController">
+	<columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="460.0" minWidth="10.0" prefWidth="74.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="460.0" minWidth="10.0" prefWidth="134.0" />
+		<ColumnConstraints hgrow="SOMETIMES" maxWidth="466.0" minWidth="10.0" prefWidth="165.0" />
+		<ColumnConstraints hgrow="SOMETIMES" maxWidth="666.0" minWidth="10.0" prefWidth="333.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="551.0" minWidth="10.0" prefWidth="298.0" />
+		<ColumnConstraints hgrow="SOMETIMES" maxWidth="195.0" minWidth="0.0" prefWidth="0.0" />
+	</columnConstraints>
+	<rowConstraints>
+		<RowConstraints maxHeight="129.0" minHeight="10.0" prefHeight="75.39999923706054" vgrow="SOMETIMES" />
+		<RowConstraints maxHeight="250.0" minHeight="0.0" prefHeight="59.60000305175781" vgrow="SOMETIMES" />
+		<RowConstraints maxHeight="277.0" minHeight="10.0" prefHeight="57.399996948242205" vgrow="SOMETIMES" />
+		<RowConstraints maxHeight="277.0" minHeight="10.0" prefHeight="47.20001831054688" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="335.1999877929687" minHeight="10.0" prefHeight="56.20000000000002" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="335.1999877929687" minHeight="10.0" prefHeight="56.399987792968716" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="335.1999877929687" minHeight="10.0" prefHeight="50.79996948242183" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="335.1999877929687" minHeight="10.0" prefHeight="310.8000305175781" vgrow="SOMETIMES" />
+	</rowConstraints>
+	<children>
+		<HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-text-alignment: CENTER;" styleClass="-fx-text-alignment:CENTER" GridPane.columnSpan="5">
+         <children>
+      				<TextArea id="titleDisplayArea" editable="false" prefHeight="90.0" prefWidth="1055.0" style="-fx-border-color: BLUE; -fx-text-alignment: CENTER;" text="                                                             Create New Account." wrapText="true">
+      					<font>
+      						<Font name="Cooper Black" size="24.0" />
+      					</font>
+      				</TextArea>
+         </children>
+		</HBox>
+		<VBox alignment="CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+			<children>
+				<Label id="emailLabel" fx:id="usernameLabel" alignment="TOP_CENTER" contentDisplay="TOP" focusTraversable="false" text="Email" textAlignment="CENTER" textFill="BLUE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+			</children>
+		</VBox>
+		<VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+			<children>
+				<TextField fx:id="emailTextField" prefHeight="18.0" prefWidth="200.0" style="-fx-border-color: BLUE;" />
+			</children>
+		</VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <children>
+            <Label id="emailLabel" fx:id="usernameLabel1" alignment="TOP_CENTER" contentDisplay="TOP" focusTraversable="false" text="First Name" textAlignment="CENTER" textFill="BLUE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+         <children>
+            <TextField fx:id="firstNameTextField" prefHeight="18.0" prefWidth="200.0" style="-fx-border-color: BLUE;" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <children>
+            <Label id="emailLabel" fx:id="usernameLabel2" alignment="TOP_CENTER" contentDisplay="TOP" focusTraversable="false" text="Last Name" textAlignment="CENTER" textFill="BLUE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="185.0" prefWidth="279.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+         <children>
+            <TextField fx:id="lastNameTextField" prefHeight="18.0" prefWidth="200.0" style="-fx-border-color: BLUE;" />
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <children>
+            <Label id="emailLabel" fx:id="usernameLabel21" alignment="TOP_CENTER" contentDisplay="TOP" focusTraversable="false" text="Title" textAlignment="CENTER" textFill="BLUE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="185.0" prefWidth="279.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+         <children>
+            <TextField fx:id="titleTextField" prefHeight="18.0" prefWidth="200.0" style="-fx-border-color: BLUE;" />
+         </children>
+      </VBox>
+		<VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+			<children>
+				<Label id="passwordLabel" fx:id="passwordLabel" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" text="Password" textAlignment="CENTER" textFill="BLUE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font></Label>
+			</children>
+		</VBox>
+		<VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+         <children>
+            <PasswordField fx:id="passwordField" prefHeight="18.0" prefWidth="200.0" style="-fx-border-color: BLUE;">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </PasswordField>
+         </children>
+		</VBox>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+         <children>
+            <Label id="passwordLabel" fx:id="passwordLabel1" alignment="CENTER" contentDisplay="TOP" focusTraversable="false" text="Re-Type Password" textAlignment="CENTER" textFill="BLUE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="185.0" prefWidth="279.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
+         <children>
+            <PasswordField fx:id="retypePasswordField" prefHeight="18.0" prefWidth="200.0" style="-fx-border-color: BLUE;">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </PasswordField>
+         </children>
+      </VBox>
+		<VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="7">
+			<children>
+				<Label fx:id="newAccountLabel" alignment="TOP_LEFT" prefHeight="62.0" prefWidth="213.0" text="After entering a username and valid password, click the &quot;Create New Account&quot; button." textAlignment="CENTER" wrapText="true">
+					<VBox.margin>
+						<Insets />
+					</VBox.margin>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+				</Label>
+				<Button fx:id="newAccountBtn" mnemonicParsing="false" onAction="#createNewAccountOnAction" prefHeight="43.0" prefWidth="179.0" text="Create New Account" textAlignment="CENTER" textFill="BLUE">
+					<VBox.margin>
+						<Insets />
+					</VBox.margin>
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+				</Button>
+			</children>
+		</VBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="5" GridPane.rowSpan="2">
+         <children>
+            <Label alignment="TOP_CENTER" contentDisplay="CENTER" focusTraversable="false" prefHeight="129.0" prefWidth="294.0" text="PASSWORD REQUIREMENTS:&#10;Password must contain at least:&#10;* One Uppercase Letter&#10;* One Lowercase Letter&#10;* One Number" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox alignment="BOTTOM_CENTER" prefHeight="280.0" prefWidth="298.0" GridPane.columnIndex="4" GridPane.rowIndex="7">
+         <children>
+            <Button fx:id="goBackBtn" alignment="CENTER" mnemonicParsing="false" onAction="#goBackOnAction" prefHeight="46.0" prefWidth="195.0" text="Go Back To Admin Tools" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+	</children>
+</GridPane>
