@@ -13,8 +13,10 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import model.Patient;
 import model.User;
 import model.UserStore;
+import model.Utilities;
 
 public class SignUpController {
 	@FXML
@@ -29,31 +31,32 @@ public class SignUpController {
 	public PasswordField passwordField;
 	@FXML
 	public PasswordField retypePasswordField;
-
-	private String email;
+	private String username;
 	private String password;
 	private String firstName;
 	private String lastName;
 	private String title;
 	private String retypePassword;
-
+	private int idCounter;
 	private static UserStore userStore;
-
 	public void createNewAccountOnAction(ActionEvent e) {
+		idCounter = Utilities.readUserIdCount();
+		User.setUserIdCounter(idCounter);
+
 		userStore = UserStore.getUserStore();
-		email = emailTextField.getText();
+		username = emailTextField.getText();
 		firstName = firstNameTextField.getText();
 		lastName = lastNameTextField.getText();
 		title = titleTextField.getText();
 		password = passwordField.getText();
 		retypePassword = retypePasswordField.getText();
 
-		if (email.isBlank() || password.isBlank() || retypePassword .isBlank()) {
+		if (username.isBlank() || password.isBlank() || retypePassword .isBlank()) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Information Error");
 			alert.setHeaderText("Information Missing");
 			alert.setContentText(
-					"Please make sure both the email field and password fields are filled out completely.");
+					"Please make sure both the username field and password fields are filled out completely.");
 			alert.showAndWait();
 			e.consume();
 		} else if (!(password.equals(retypePassword))) {
@@ -63,14 +66,14 @@ public class SignUpController {
 			alert.setContentText("Please make sure both passwords match.");
 			alert.showAndWait();
 			e.consume();
-		} else if (userStore.searchEmail(email)) {
+		} else if (userStore.searchUsername(username)) {
 			Alert alert1 = new Alert(AlertType.ERROR);
-			alert1.setTitle("Email Error");
-			alert1.setHeaderText("Email Availability");
-			alert1.setContentText("Email is already in use. Please Try a new email "
+			alert1.setTitle("Username Error");
+			alert1.setHeaderText("Username Availability");
+			alert1.setContentText("Username is already in use. Please Try a new username "
 					+ "or contact customer service to recover your account");
 			alert1.showAndWait();
-			System.out.println("Email already exists.. Please try again");
+			System.out.println("Username already exists.. Please try again");
 			e.consume();
 		} else if (!UserStore.passwordTest(password)) {
 			Alert alert = new Alert(AlertType.ERROR);
@@ -82,8 +85,11 @@ public class SignUpController {
 			alert.showAndWait();
 			e.consume();
 		} else {
-			userStore.insert(email, new User(email, password, firstName, lastName, title));
+			userStore.insert(username, new User(username, password, firstName, lastName, title));
+			idCounter++;
+			Utilities.saveUserIdCount();
 			UserStore.saveUser();
+
 			Alert alert2 = new Alert(AlertType.CONFIRMATION);
 			alert2.setTitle("User Sign Up Confirmation");
 			alert2.setHeaderText("User saved");
@@ -100,7 +106,6 @@ public class SignUpController {
 			}
 		}
 	}
-
 	public void goBackOnAction(ActionEvent e) throws IOException {
 		Parent loginRoot = FXMLLoader.load(getClass().getResource("/view/HealthLogin.fxml"));
 		Scene loginScene = new Scene(loginRoot);

@@ -1,38 +1,43 @@
 package model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Random;
 
 public class Patient implements Comparable<Patient>, Serializable {
     private String firstName;
     private String lastName;
-    private String prescriptions;
+    private String medications;
     private String condition;
     private String notes;
     private String caretaker;
     private String patientId;
+    private LocalDate dateOfBirth;
     private int roomNumber;
-
-    private static int idCounter= 0;
-
-
-
-    public Patient(String firstName, String lastName, String prescriptions, String condition, String notes,
+    private static int patientIdCounter = 0;
+    public Patient(String firstName, String lastName, LocalDate dateOfBirth, String medications, int roomNumber, String condition, String notes,
                    String caretaker) {
         super();
         this.firstName = firstName;
         this.lastName = lastName;
-        this.prescriptions = prescriptions;
+        this.dateOfBirth = dateOfBirth;
+        this.medications = medications;
         this.condition = condition;
         this.notes = notes;
         this.caretaker = caretaker;
-        this.patientId = String.valueOf(idCounter++);
-        this.roomNumber = new Random().nextInt(100) + 1;;
+        this.patientId = String.valueOf(patientIdCounter++);
+        this.roomNumber = roomNumber;
     }
 
-    public Patient(String firstName, String lastName, String medications, String condition, String notes, String caretaker, String patientID, int roomNumber) {
+    public static int getPatientIdCounter() {
+        return patientIdCounter;
     }
-
+    public static void setPatientIdCounter(int idCounter) {
+        Patient.patientIdCounter = idCounter;
+    }
+    public String getPatientId() {
+        return patientId;
+    }
     public String getFirstName() {
         return firstName;
     }
@@ -49,19 +54,28 @@ public class Patient implements Comparable<Patient>, Serializable {
         this.lastName = lastName;
     }
 
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
     public int getRoomNumber() {
         return roomNumber;
     }
+
     public void setRoomNumber(int roomNumber) {
         this.roomNumber = roomNumber;
     }
 
-    public String getPrescriptions() {
-        return prescriptions;
+    public String getMedications() {
+        return medications;
     }
 
-    public void setPrescriptions(String prescriptions) {
-        this.prescriptions = prescriptions;
+    public void setMedications(String medications) {
+        this.medications = medications;
     }
 
     public String getCondition() {
@@ -94,8 +108,8 @@ public class Patient implements Comparable<Patient>, Serializable {
 
     @Override
     public String toString() {
-        return "Patient [\nfirstName=" + firstName + "\nlastName=" + lastName + "\nprescritions=" + prescriptions
-                + "\ncondition=" + condition + "\nnotes=" + notes + "\ncaretaker=" + caretaker + "\npatientID="
+        return "Patient [\nfirstName=" + firstName + "\nlastName=" + lastName + "\ndateOfBirth=" + dateOfBirth
+                +"\nmedications=" + medications + "\ncondition=" + condition + "\nnotes=" + notes + "\ncaretaker=" + caretaker + "\npatientID="
                 + patientId + "\nroomNumber=" +roomNumber+"\n]";
     }
 

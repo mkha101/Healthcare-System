@@ -2,6 +2,7 @@ package controller;
 
 import java.io.IOException;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,31 +18,30 @@ import model.UserStore;
 
 public class LoginController {
 	@FXML
-	public TextField emailTextField;
+	public TextField usernameTextField;
 	@FXML
 	public PasswordField passwordField;
-
-	private String email;
+	private String username;
 	private String password;
 	private static UserStore userMap;
 
 	public void loginOnAction(ActionEvent e) throws IOException {
 		userMap = UserStore.getUserStore();
-		email = emailTextField.getText();
+		username = usernameTextField.getText();
 		password = passwordField.getText();
-		if (email.isBlank()|| password.isBlank()) {
+		if (username.isBlank()|| password.isBlank()) {
 			Alert alert = new Alert(AlertType.ERROR);
 			alert.setTitle("Information Error");
 			alert.setHeaderText("Information Missing");
-			alert.setContentText("Please make sure both the email field and password field are filled out completely");
+			alert.setContentText("Please make sure both the username field and password field are filled out completely");
 			alert.showAndWait();
 			e.consume();
 		}
 		try {
-			if (userMap.searchEmail(email)) {
-				if (userMap.searchPassword(email, password)) {
-					Parent loginSucessRoot = FXMLLoader.load(getClass().getResource("/view/HealthFunction.fxml"));
-					Scene typeScene = new Scene(loginSucessRoot);
+			if (userMap.searchUsername(username)) {
+				if (userMap.searchPassword(username, password)) {
+					Parent loginSuccessRoot = FXMLLoader.load(getClass().getResource("/view/HealthFunction2.fxml"));
+					Scene typeScene = new Scene(loginSuccessRoot);
 					Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
 					window.setScene(typeScene);
 					window.show();
@@ -56,9 +56,9 @@ public class LoginController {
 			} else {
 				Alert alert = new Alert(AlertType.ERROR);
 				alert.setTitle("Information Error");
-				alert.setHeaderText("Email Incorrect");
+				alert.setHeaderText("Username Incorrect");
 				alert.setContentText(
-						"Email you entered is incorrect." + " If you are a new user please contact your IT Department.");// click the Sign Up button.");
+						"Username you entered is incorrect." + " If you are a new user please contact your IT Department.");
 				alert.showAndWait();
 				e.consume();
 			}
@@ -73,6 +73,9 @@ public class LoginController {
 		Stage window = (Stage) ((Node) e.getSource()).getScene().getWindow();
 		window.setScene(signUpScene);
 		window.show();
+	}
+	public void exitOnAction(ActionEvent e) throws IOException {
+		Platform.exit();
 	}
 
 }

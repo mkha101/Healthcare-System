@@ -9,7 +9,7 @@ public class User implements Comparable<User>, Serializable {
 	private String lastName;
 	private String title;
 	private String employeeId;
-	private static int EmIdCounter = 0;
+	private static int userIdCounter = 0;
 
 	public User(String username, String password, String firstName, String lastName, String title) {
 		this.username = username;
@@ -17,9 +17,14 @@ public class User implements Comparable<User>, Serializable {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.title = title;
-		this.employeeId = String.valueOf(EmIdCounter++);
+		this.employeeId = String.valueOf(userIdCounter++);
 	}
-
+	public static int getUserIdCounter() {
+		return userIdCounter;
+	}
+	public static void setUserIdCounter(int idCounter) {
+		userIdCounter = idCounter;
+	}
 	public String getUsername() {
 		return username;
 	}

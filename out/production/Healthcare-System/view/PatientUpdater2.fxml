@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PatientUpdaterController">
+  <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="206.39999389648438" minWidth="0.0" prefWidth="30.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.0" minWidth="10.0" prefWidth="167.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="359.0" minWidth="10.0" prefWidth="270.0" />
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="462.4000244140625" minWidth="1.0" prefWidth="79.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="284.0" minWidth="10.0" prefWidth="172.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="426.4" minWidth="10.0" prefWidth="309.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="273.200048828125" minWidth="0.0" prefWidth="36.0" />
+      <ColumnConstraints />
+  </columnConstraints>
+  <rowConstraints>
+      <RowConstraints maxHeight="103.5999969482422" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="103.5999969482422" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="103.5999969482422" minHeight="10.0" prefHeight="63.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="103.5999969482422" minHeight="10.0" prefHeight="39.99998779296877" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="103.5999969482422" minHeight="10.0" prefHeight="62.399993896484375" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="149.20000591278077" minHeight="10.0" prefHeight="57.59998779296876" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="169.99999084472657" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="157.60000610351562" minHeight="10.0" prefHeight="96.80002441406248" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="136.60001220703123" minHeight="10.0" prefHeight="77.5999877929687" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <HBox alignment="CENTER" GridPane.columnSpan="8" GridPane.rowIndex="1">
+         <children>
+            <Label alignment="CENTER" focusTraversable="false" prefHeight="94.0" prefWidth="1253.0" style="-fx-border-color: BLACK;" text="Update Patient" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <children>
+            <Button fx:id="searchPatientIdButton" mnemonicParsing="false" onAction="#searchPatientIdOnAction" prefHeight="40.0" prefWidth="151.0" style="-fx-background-color: GREY; -fx-border-color: BLACK;" text="Search Patient ID" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+         <children>
+            <TextField fx:id="searchPatientIdTextField" prefHeight="30.0" prefWidth="300.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+         <children>
+            <Button fx:id="searchLastNameButton" mnemonicParsing="false" onAction="#searchLastNameOnAction" prefHeight="40.0" prefWidth="151.0" style="-fx-background-color: GREY; -fx-border-color: BLACK;" text="Search Last Name" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+         <children>
+            <TextField fx:id="searchLastNameTextField" prefHeight="30.0" prefWidth="300.0" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+         <children>
+            <Label fx:id="patientIdLabel" focusTraversable="false" text="Patient Id" visible="false">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="3">
+         <children>
+            <TextField fx:id="patientIdTextField" editable="false" focusTraversable="false" prefHeight="30.0" prefWidth="150.0" visible="false">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <children>
+            <Label fx:id="firstNameLabel" focusTraversable="false" text="First Name" visible="false">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <children>
+            <TextField fx:id="firstNameTextField" prefHeight="30.0" prefWidth="300.0" visible="false" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+         <children>
+            <Label fx:id="lastNameLabel" focusTraversable="false" text="Last Name" visible="false">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+         <children>
+            <TextField fx:id="lastNameTextField" prefHeight="30.0" prefWidth="300.0" visible="false" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+         <children>
+            <Label fx:id="dateOfBirthLabel" focusTraversable="false" text="Date of Birth" visible="false">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+         <children>
+            <DatePicker fx:id="datePicker" prefHeight="30.0" prefWidth="300.0" visible="false" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+         <children>
+            <Label fx:id="medicationLabel" focusTraversable="false" text="Medications" visible="false">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
+         <children>
+            <TextArea fx:id="medicationTextArea" prefHeight="65.0" prefWidth="300.0" visible="false" wrapText="true" />
+         </children>
+         <GridPane.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </GridPane.margin>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+         <children>
+            <Label fx:id="roomNumberLabel" focusTraversable="false" style="-fx-font-weight: BOLD;" text="Room Number" visible="false">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
+         <children>
+            <TextField fx:id="roomNumberTextField" prefHeight="30.0" prefWidth="300.0" visible="false" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="5">
+         <children>
+            <Label fx:id="conditionLabel" focusTraversable="false" text="Condition" visible="false">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="5">
+         <children>
+            <TextField fx:id="conditionTextField" prefHeight="30.0" prefWidth="300.0" visible="false" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
+         <children>
+            <Label fx:id="caretakerLabel" focusTraversable="false" text="Caretaker" visible="false">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font></Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="6">
+         <children>
+            <TextField fx:id="caretakerTextField" prefHeight="30.0" prefWidth="300.0" visible="false" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="7">
+         <children>
+            <Label fx:id="notesLabel" focusTraversable="false" style="-fx-font-weight: BOLD;" text="Notes" visible="false">
+               <font>
+                  <Font size="16.0" />
+               </font></Label>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="7">
+         <children>
+            <TextArea fx:id="notesTextArea" prefHeight="65.0" prefWidth="300.0" visible="false" wrapText="true" />
+         </children>
+         <GridPane.margin>
+            <Insets bottom="10.0" top="10.0" />
+         </GridPane.margin>
+      </HBox>
+      <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="8">
+         <children>
+            <Button fx:id="updatePatientButton" alignment="CENTER" mnemonicParsing="false" onAction="#updatePatientOnAction" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: GREY; -fx-border-color: BLACK;" text="Update Patient" textFill="WHITE" visible="false">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="8">
+         <children>
+            <Button fx:id="goBackButton" mnemonicParsing="false" onAction="#goBackOnAction" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: RED; -fx-border-color: BLACK;" text="GO BACK" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</GridPane>

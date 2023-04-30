@@ -30,11 +30,11 @@ public class UserStore {
 		}
 	}
 
-	public void insert(String email, User user) {
-		theMap.put(email, user);
+	public void insert(String username, User user) {
+		theMap.put(username, user);
 	}
 
-	public boolean searchEmail(String string) {
+	public boolean searchUsername(String string) {
 		if (theMap.containsKey(string)) {
 			return true;
 		} else {
@@ -43,8 +43,8 @@ public class UserStore {
 		}
 	}
 
-	public boolean searchPassword(String email, String password) {
-		if (theMap.get(email).getPassword().equals(password)) {
+	public boolean searchPassword(String username, String password) {
+		if (theMap.get(username).getPassword().equals(password)) {
 			return true;
 		} else {
 			System.out.println("Incorrect Password");
@@ -81,9 +81,8 @@ public class UserStore {
 			System.out.println(mapIt.next());
 		}
 	}
-
-	public void delete() {
-
+	public void deleteUser(String id) {
+		 theMap.remove(id);
 	}
 
 	public static void setTheUserMap() {

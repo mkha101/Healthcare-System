@@ -14,7 +14,7 @@ public class Main extends Application {
 		try {
 			InitializeData.initialize();
 			GridPane root = (GridPane) FXMLLoader.load(getClass().getResource("/view/HealthLogin.fxml"));
-			Scene scene = new Scene(root, 700, 550);
+			Scene scene = new Scene(root, 1100, 750);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.sizeToScene();
 			primaryStage.setTitle("Management Services");
